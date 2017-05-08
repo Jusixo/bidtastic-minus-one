@@ -1,0 +1,35 @@
+<div class="page-header">
+  <%= link_to auctions_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_auction_path(@auction), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show auction</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Name of event:</dt>
+  <dd><%= @auction.name_of_event %></dd>
+
+  <dt>Organization:</dt>
+  <dd><%= @auction.organization %></dd>
+
+  <dt>Image data:</dt>
+  <dd><%= @auction.image_data %></dd>
+
+  <dt>Date:</dt>
+  <dd><%= @auction.date %></dd>
+
+  <dt>Start time:</dt>
+  <dd><%= @auction.start_time %></dd>
+
+  <dt>Duration:</dt>
+  <dd><%= @auction.duration %></dd>
+
+  <dt>Description:</dt>
+  <dd><%= @auction.description %></dd>
+
+</dl>
