@@ -6,7 +6,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.0'
 # Use postgresql as the database for Active Record
@@ -22,6 +21,7 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -31,6 +31,12 @@ gem 'uglifier', '>= 1.3.0'
 ## PAGINATION -- NOT IN USE
 # gem 'kaminari', '~> 1.0', '>= 1.0.1'
 # gem 'kaminari-bootstrap', '~> 3.0', '>= 3.0.1'
+
+## Use jquery as the JavaScript library
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+
+## USER LOGIN
+# gem 'devise'
 
 ## AUTHENTICATION
 gem 'omniauth', '~> 1.6', '>= 1.6.1'

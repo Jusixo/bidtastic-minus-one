@@ -29,3 +29,349 @@ Processing by AuctionsController#index as HTML
 Completed 200 OK in 3927ms (Views: 3916.1ms | ActiveRecord: 7.2ms)
 
 
+Started GET "/auctions" for 127.0.0.1 at 2017-05-08 18:48:55 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.6ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  Rendered auctions/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 291ms (Views: 286.1ms | ActiveRecord: 1.7ms)
+
+
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+Started GET "/auctions/new" for 127.0.0.1 at 2017-05-08 18:49:57 -0400
+Processing by AuctionsController#new as HTML
+  Rendering auctions/new.html.erb within layouts/application
+  Rendered auctions/_form.html.erb (366.4ms) [cache miss]
+  Rendered auctions/new.html.erb within layouts/application (368.2ms)
+Completed 200 OK in 411ms (Views: 388.1ms | ActiveRecord: 8.4ms)
+
+
+Started POST "/auctions" for 127.0.0.1 at 2017-05-08 18:50:08 -0400
+Processing by AuctionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CW8ELS8Q/vL3Dr8kgmtln1lgZhZLp02XdGNl3cNSf/JPqn6rK2vWRKXP0NCzFQGjAcqth93nsNQTrfwBGPrdMw==", "auction"=>{"name_of_event"=>"Test", "organization"=>"TEstin", "image_data"=>"", "date"=>"ds;lg", "start_time"=>"asklgjl", "duration"=>"lkjsfdl", "description"=>"lg;afsj"}, "commit"=>"Create Auction"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "auctions" ("name_of_event", "organization", "image_data", "date", "start_time", "duration", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name_of_event", "Test"], ["organization", "TEstin"], ["image_data", ""], ["date", "ds;lg"], ["start_time", "asklgjl"], ["duration", "lkjsfdl"], ["description", "lg;afsj"], ["created_at", "2017-05-08 22:50:08.747477"], ["updated_at", "2017-05-08 22:50:08.747477"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/auctions/1
+Completed 302 Found in 13ms (ActiveRecord: 7.8ms)
+
+
+Started GET "/auctions/1" for 127.0.0.1 at 2017-05-08 18:50:08 -0400
+Processing by AuctionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAuction Load (0.2ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering auctions/show.html.erb within layouts/application
+  Rendered auctions/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 30ms (Views: 24.3ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" ORDER BY "auctions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "auctions" WHERE "auctions"."id" = $1[0m  [["id", 1]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+Started GET "/auctions/1" for 127.0.0.1 at 2017-05-08 22:33:28 -0400
+  [1m[35m (7.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuctionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 14ms (ActiveRecord: 5.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Auction with 'id'=1):
+  
+app/controllers/auctions_controller.rb:9:in `show'
+Started GET "/auctions" for 127.0.0.1 at 2017-05-08 22:33:36 -0400
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  Rendered auctions/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 404ms (Views: 398.1ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/auctions/new" for 127.0.0.1 at 2017-05-08 22:33:40 -0400
+Processing by AuctionsController#new as HTML
+  Rendering auctions/new.html.erb within layouts/application
+  Rendered auctions/_form.html.erb (415.7ms) [cache miss]
+  Rendered auctions/new.html.erb within layouts/application (419.1ms)
+Completed 200 OK in 487ms (Views: 461.6ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/auctions" for 127.0.0.1 at 2017-05-08 22:33:53 -0400
+Processing by AuctionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2AMoyhPMbkO4+zAG+D/fXc9Lq2Dig3NCX/Df0zu+5lqexlJMF7dG9eo6X/LJQbthl+Fg8XTDjgE4PkYP4BZEmw==", "auction"=>{"name_of_event"=>"Test", "organization"=>"d", "image_data"=>"", "date"=>"d", "start_time"=>"d", "duration"=>"d", "description"=>"d"}, "commit"=>"Create Auction"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.8ms)[0m  [1m[32mINSERT INTO "auctions" ("name_of_event", "organization", "image_data", "date", "start_time", "duration", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name_of_event", "Test"], ["organization", "d"], ["image_data", ""], ["date", "d"], ["start_time", "d"], ["duration", "d"], ["description", "d"], ["created_at", "2017-05-09 02:33:53.704285"], ["updated_at", "2017-05-09 02:33:53.704285"]]
+  [1m[35m (15.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/auctions/2
+Completed 302 Found in 27ms (ActiveRecord: 22.0ms)
+
+
+Started GET "/auctions/2" for 127.0.0.1 at 2017-05-08 22:33:53 -0400
+Processing by AuctionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAuction Load (0.5ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering auctions/show.html.erb within layouts/application
+  Rendered auctions/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 54ms (Views: 45.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-08 22:34:42 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/railties-5.1.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/railties-5.1.0/lib/rails/templates/rails/welcome/index.html.erb (3.3ms)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2017-05-08 22:34:54 -0400
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  Rendered auctions/index.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 221ms (Views: 207.9ms | ActiveRecord: 9.3ms)
+
+
+Started DELETE "/auctions/2" for 127.0.0.1 at 2017-05-08 22:34:58 -0400
+Processing by AuctionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Eal7q8+TOUz7QkELvvd+jkl+8EGproufywgmCADek0hXbAEty+gR+qmDLv+PiRqyEdQ70D/udtysxr/U23YxiQ==", "id"=>"2"}
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "auctions" WHERE "auctions"."id" = $1[0m  [["id", 2]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/auctions
+Completed 302 Found in 15ms (ActiveRecord: 7.6ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2017-05-08 22:34:58 -0400
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  Rendered auctions/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 75ms (Views: 72.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2017-05-08 22:35:26 -0400
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.2ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  Rendered auctions/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 114ms (Views: 112.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auctions/new" for 127.0.0.1 at 2017-05-08 22:35:28 -0400
+Processing by AuctionsController#new as HTML
+  Rendering auctions/new.html.erb within layouts/application
+  Rendered auctions/_form.html.erb (384.2ms) [cache miss]
+  Rendered auctions/new.html.erb within layouts/application (386.3ms)
+Completed 200 OK in 423ms (Views: 421.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/auctions" for 127.0.0.1 at 2017-05-08 22:35:36 -0400
+Processing by AuctionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"//Ee55wBJJA2RaVfn9ti0zYweZPbS0CCDpHfVrJvHSu5NGRhmHoMJmSEyquupQbvbpqyAk0LvcFpX0aKace/6g==", "auction"=>{"name_of_event"=>"a", "organization"=>"a", "image_data"=>"", "date"=>"a", "start_time"=>"aa", "duration"=>"aa", "description"=>"a"}, "commit"=>"Create Auction"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "auctions" ("name_of_event", "organization", "image_data", "date", "start_time", "duration", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name_of_event", "a"], ["organization", "a"], ["image_data", ""], ["date", "a"], ["start_time", "aa"], ["duration", "aa"], ["description", "a"], ["created_at", "2017-05-09 02:35:36.898246"], ["updated_at", "2017-05-09 02:35:36.898246"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/auctions/3
+Completed 302 Found in 11ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/auctions/3" for 127.0.0.1 at 2017-05-08 22:35:36 -0400
+Processing by AuctionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering auctions/show.html.erb within layouts/application
+  Rendered auctions/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 46ms (Views: 42.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/auctions/" for 127.0.0.1 at 2017-05-08 22:38:15 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.5ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  Rendered auctions/index.html.erb within layouts/application (14.6ms)
+Completed 500 Internal Server Error in 170ms (ActiveRecord: 3.4ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/assets/config
+  /Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/assets/images
+  /Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/assets/javascripts
+  /Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/assets/stylesheets
+  /usr/local/lib/ruby/gems/2.4.0/bundler/gems/refile-6f9836a36e7e/app/assets/javascripts
+  /usr/local/lib/ruby/gems/2.4.0/gems/jquery-ui-rails-6.0.1/app/assets/images
+  /usr/local/lib/ruby/gems/2.4.0/gems/jquery-ui-rails-6.0.1/app/assets/javascripts
+  /usr/local/lib/ruby/gems/2.4.0/gems/jquery-ui-rails-6.0.1/app/assets/stylesheets
+  /usr/local/lib/ruby/gems/2.4.0/gems/font-awesome-rails-4.7.0.2/app/assets/fonts
+  /usr/local/lib/ruby/gems/2.4.0/gems/font-awesome-rails-4.7.0.2/app/assets/stylesheets
+  /usr/local/lib/ruby/gems/2.4.0/gems/bootstrap-social-rails-4.12.0/vendor/assets/stylesheets
+  /usr/local/lib/ruby/gems/2.4.0/bundler/gems/bootstrap-generators-c97912feb2d6/vendor/assets/fonts
+  /usr/local/lib/ruby/gems/2.4.0/bundler/gems/bootstrap-generators-c97912feb2d6/vendor/assets/javascripts
+  /usr/local/lib/ruby/gems/2.4.0/bundler/gems/bootstrap-generators-c97912feb2d6/vendor/assets/stylesheets
+  /usr/local/lib/ruby/gems/2.4.0/gems/actioncable-5.1.0/lib/assets/compiled
+  /usr/local/lib/ruby/gems/2.4.0/gems/actionview-5.1.0/lib/assets/compiled
+  /Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/node_modules
+  /usr/local/lib/ruby/gems/2.4.0/bundler/gems/bootstrap-generators-c97912feb2d6/vendor/twitter/bootstrap/sass
+  /Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/assets/fonts):
+    15:     <%= javascript_include_tag "https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js", "https://oss.maxcdn.com/respond/1.4.2/respond.min.js" %>
+    16:   <![endif]-->
+    17: 
+    18:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    19:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    20:   <%= csrf_meta_tags %>
+    21: </head>
+  
+app/assets/javascripts/application.js:14
+app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb__2024678575393557169_70202155469580'
+Started GET "/auctions/" for 127.0.0.1 at 2017-05-08 22:38:27 -0400
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  Rendered auctions/index.html.erb within layouts/application (15.7ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 5.3ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery_ujs' with type 'application/javascript'
+Checked in these paths: 
+  /Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/assets/config
+  /Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/assets/images
+  /Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/assets/javascripts
+  /Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/assets/stylesheets
+  /usr/local/lib/ruby/gems/2.4.0/bundler/gems/refile-6f9836a36e7e/app/assets/javascripts
+  /usr/local/lib/ruby/gems/2.4.0/gems/jquery-ui-rails-6.0.1/app/assets/images
+  /usr/local/lib/ruby/gems/2.4.0/gems/jquery-ui-rails-6.0.1/app/assets/javascripts
+  /usr/local/lib/ruby/gems/2.4.0/gems/jquery-ui-rails-6.0.1/app/assets/stylesheets
+  /usr/local/lib/ruby/gems/2.4.0/gems/font-awesome-rails-4.7.0.2/app/assets/fonts
+  /usr/local/lib/ruby/gems/2.4.0/gems/font-awesome-rails-4.7.0.2/app/assets/stylesheets
+  /usr/local/lib/ruby/gems/2.4.0/gems/bootstrap-social-rails-4.12.0/vendor/assets/stylesheets
+  /usr/local/lib/ruby/gems/2.4.0/bundler/gems/bootstrap-generators-c97912feb2d6/vendor/assets/fonts
+  /usr/local/lib/ruby/gems/2.4.0/bundler/gems/bootstrap-generators-c97912feb2d6/vendor/assets/javascripts
+  /usr/local/lib/ruby/gems/2.4.0/bundler/gems/bootstrap-generators-c97912feb2d6/vendor/assets/stylesheets
+  /usr/local/lib/ruby/gems/2.4.0/gems/actioncable-5.1.0/lib/assets/compiled
+  /usr/local/lib/ruby/gems/2.4.0/gems/actionview-5.1.0/lib/assets/compiled
+  /Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/node_modules
+  /usr/local/lib/ruby/gems/2.4.0/bundler/gems/bootstrap-generators-c97912feb2d6/vendor/twitter/bootstrap/sass
+  /Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/assets/fonts):
+    15:     <%= javascript_include_tag "https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js", "https://oss.maxcdn.com/respond/1.4.2/respond.min.js" %>
+    16:   <![endif]-->
+    17: 
+    18:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    19:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    20:   <%= csrf_meta_tags %>
+    21: </head>
+  
+app/assets/javascripts/application.js:14
+app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb__2024678575393557169_70202144149120'
+Started GET "/auctions/" for 127.0.0.1 at 2017-05-08 22:38:35 -0400
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.2ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  Rendered auctions/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 96ms (Views: 94.5ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/auctions/3" for 127.0.0.1 at 2017-05-08 22:38:39 -0400
+Processing by AuctionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"pf639lJXc2hN578sYAQOaD1D+Ip+d78FFT0AiEBu6FbjO81wVixb3h8m0NhRempUZekzG+g3QkZy85lUm8ZKlw==", "id"=>"3"}
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "auctions" WHERE "auctions"."id" = $1[0m  [["id", 3]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/auctions
+Completed 302 Found in 12ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2017-05-08 22:38:39 -0400
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.2ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  Rendered auctions/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 60ms (Views: 57.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2017-05-08 22:41:53 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.6ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  Rendered auctions/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 2787ms (Views: 2779.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/auctions/new" for 127.0.0.1 at 2017-05-08 22:41:58 -0400
+Processing by AuctionsController#new as HTML
+  Rendering auctions/new.html.erb within layouts/application
+  Rendered auctions/_form.html.erb (351.6ms) [cache miss]
+  Rendered auctions/new.html.erb within layouts/application (353.9ms)
+Completed 200 OK in 433ms (Views: 417.3ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/auctions" for 127.0.0.1 at 2017-05-08 22:42:01 -0400
+Processing by AuctionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6OkBtRSeF2VHWX/aiT/9lWvzGM9O1csCeRjXLkI/hMquLHszEOU/0xWYEC64QZmpM1nTXtiVNkEe1k7ymZcmCw==", "auction"=>{"name_of_event"=>"a", "organization"=>"", "image_data"=>"", "date"=>"", "start_time"=>"", "duration"=>"", "description"=>""}, "commit"=>"Create Auction"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "auctions" ("name_of_event", "organization", "image_data", "date", "start_time", "duration", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name_of_event", "a"], ["organization", ""], ["image_data", ""], ["date", ""], ["start_time", ""], ["duration", ""], ["description", ""], ["created_at", "2017-05-09 02:42:01.013996"], ["updated_at", "2017-05-09 02:42:01.013996"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/auctions/4
+Completed 302 Found in 8ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/auctions/4" for 127.0.0.1 at 2017-05-08 22:42:01 -0400
+Processing by AuctionsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering auctions/show.html.erb within layouts/application
+  Rendered auctions/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 91ms (Views: 84.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2017-05-08 22:42:07 -0400
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  Rendered auctions/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 71ms (Views: 68.9ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/auctions/4" for 127.0.0.1 at 2017-05-08 22:42:09 -0400
+Processing by AuctionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9w32+6U90pooWsE1CQrEFzHoV4T37d31lqRrc8BfniGxyIx9oUb6LHqbrsE4dKAraUKcFWGtILbxavKvG/c84A==", "id"=>"4"}
+  [1m[36mAuction Load (0.2ms)[0m  [1m[34mSELECT  "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "auctions" WHERE "auctions"."id" = $1[0m  [["id", 4]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/auctions
+Completed 302 Found in 9ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2017-05-08 22:42:09 -0400
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.6ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  Rendered auctions/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 58ms (Views: 55.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-08 23:13:31 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb within layouts/application
+  Rendered pages/landing.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2415ms (Views: 2413.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-08 23:14:09 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (0.3ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+
+
