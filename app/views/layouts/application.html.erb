@@ -33,7 +33,21 @@
           <img src="/assets/bidtastic.png" width="160px" alt="">
         <% end %>
       </div>
-      <div id="navbar" class="collapse navbar-collapse">
+      <div id="navbar" class="nav navbar-nav navbar-right pull-right collapse navbar-collapse">
+
+          <li>
+            <%=link_to "welcome", auctions_path, data: { confirm: 'Are you sure?' }, class: "navbar-text btn btn-default " %>
+          </li>
+          <li>
+            <%=link_to "login", auctions_path, data: { confirm: 'Are you sure?' }, class: "navbar-text btn btn-primary btn btn-default" %>
+          </li>
+          <li>
+            <%=link_to "search", auctions_path, data: { confirm: 'Are you sure?' }, class: "navbar-text btn btn-primary btn btn-default" %>
+          </li>
+          <li>
+            <%=link_to "logout", auctions_path, data: { confirm: 'Are you sure?' }, class: "navbar-text btn btn-primary btn btn-default" %>
+          </li>
+
       </div>
     </div>
   </nav>
