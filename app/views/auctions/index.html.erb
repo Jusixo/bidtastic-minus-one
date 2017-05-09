@@ -24,7 +24,9 @@
     <tbody class="table-body">
       <%- @auctions.each do |auction| %>
       <tr>
-        <td><%= auction.name_of_event %></td>
+        <%= link_to item_path do %>
+          <td><%= auction.name_of_event %></td>
+        <%end %>
         <td><%= auction.organization %></td>
         <td><%= auction.image_data %></td>
         <td><%= auction.date %></td>

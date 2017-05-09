@@ -4,7 +4,7 @@ FactoryGirl.define do
     description "MyString"
     image_data "MyText"
     starting_bid 1
-    increment 1
+    bid_increment 1
     lot_number 1
     category "MyString"
     auction nil
