@@ -27,6 +27,16 @@ ActiveRecord::Schema.define(version: 20170509145216) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "provider"
+    t.string "email"
+    t.string "uid"
+    t.string "access_token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.string "description"

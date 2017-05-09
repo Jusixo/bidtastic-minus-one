@@ -18,3 +18,4 @@
 
 # Also ignore Finder's git ignore
 .DS_Store
+.env
