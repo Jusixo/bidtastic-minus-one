@@ -10,26 +10,52 @@
   <h1>Show item</h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt>Name:</dt>
-  <dd><%= @item.name %></dd>
+<%= image_tag(@item.image_url(:small)) %>
 
-  <dt>Description:</dt>
-  <dd><%= @item.description %></dd>
+<div class="container">
+  <div class="well well-lg">
+    Count Down Timer goes here
+  </div>
+</div>
 
-  <dt>Image:</dt>
-  <dd><%= image_tag(@item.image_url(:small)) %></dd>
+  <div class="container">
+    Category:
+    <%= @item.category %>
 
-  <dt>Lot Number:</dt>
-  <dd><%= @item.lot_number %></dd>
+    Name:
+    <%= @item.name %>
 
-  <dt>Starting Bid:</dt>
-  <dd><%= @item.starting_bid %></dd>
+    Lot Number:
+    <%= @item.lot_number %>
 
-  <dt>Bid Increment:</dt>
-  <dd><%= @item.bid_increment %></dd>
+    Starting Bid:
+    <%= @item.starting_bid %>
 
-  <dt>Category:</dt>
-  <dd><%= @item.category %></dd>
+    Description:
+    <%= @item.description %>
 
-</dl>
+  </div>
+
+
+
+<div class="page-footer">
+  <%= @item.bid_increment %>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="input-group">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">BID</button>
+        </span>
+        <input type="text" class="form-control" placeholder="<%= @item.bid_increment %>">
+      </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+    <div class="col-lg-6">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="<%= @item.bid_increment %>">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">BID</button>
+        </span>
+      </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+  </div><!-- /.row -->
+</div>

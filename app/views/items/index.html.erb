@@ -1,10 +1,32 @@
 <div class="page-header">
+  <div class="jumbotron">
+    <%= image_tag(@auction.image_url(:medium)) %>
+    <h1><%= @auction.name_of_event %></h1>
+    <p><%= @auction.description %></p>
+  </div>
+
+  <div class="container">
+    <div class="well well-lg">
+      Count Down Timer goes here
+    </div>
+  </div>
+
   <%= link_to new_item_path, class: 'btn btn-primary' do %>
     <span class="glyphicon glyphicon-plus"></span>
     New Items
   <% end %>
   <h1 Listing>Items Up for Auctions</h1>
 
-
+  <div class="media">
+  <div class="media-left media-middle">
+    <a href="#">
+      <img class="media-object" src="..." alt="...">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">Middle aligned media</h4>
+    ...
+  </div>
+</div>
 
 </div>
