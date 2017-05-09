@@ -21,22 +21,17 @@
 </head>
 <body class="controller-<%= controller_name%> action-<%= action_name%>">
 
-    <div class="row col-xs-10 col-xs-offset-1">
-      <%= link_to(auth_path(provider: 'facebook'), class:"btn btn-block btn-social btn-lg btn-facebook") do %>
-      <span class="fa fa-facebook"></span> Sign in with Facebook
-      <% end %>
-    </div>
+  <div class="row col-xs-10 col-xs-offset-1">
+    <%= link_to(auth_path(provider: 'facebook'), class:"btn btn-block btn-social btn-lg btn-facebook") do %>
+    <span class="fa fa-facebook"></span> Sign in with Facebook
+    <% end %>
+  </div>
 
-    <div class="row col-xs-10 col-xs-offset-1">
-      <%= link_to(auctions_path, class:"btn btn-block btn-social btn-lg btn-google") do %>
-      <span class="fa fa-google"></span> Sign in with Google
-      <% end %>
-    </div>
+  <div class="row col-xs-10 col-xs-offset-1">
+    <%= link_to(auth_path(provider: 'google_oauth2'), class:"btn btn-block btn-social btn-lg btn-google") do %>
+    <span class="fa fa-google"></span> Sign in with Google
+    <% end %>
+  </div>
 
 </body>
 </html>
-
-
-<!-- = link_to auth_path(provider: 'github'), class: "btn btn-warning btn-social btn-github btn-social-nextchapter" do
-  span.fa.fa-github
-  | Log In with GitHub -->
