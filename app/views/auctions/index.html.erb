@@ -2,9 +2,8 @@
   <%= link_to new_auction_path, class: 'btn btn-primary' do %>
     New Auction
   <% end %>
-  <h1 Listing>auctions</h1>
+  <h1 Listing>Upcoming Auctions</h1>
 </div>
-
 
 
 
@@ -15,7 +14,7 @@
           <li class="media">
             <% if auction.image_url(:medium) %>
               <div class="media">
-                <%= image_tag(auction.image_url(:medium), class: 'media-object') %>
+                 <%= image_tag(auction.image_url(:medium), class: 'media-object') %>
               </div>
             <% end %>
             <div class="media-body">
