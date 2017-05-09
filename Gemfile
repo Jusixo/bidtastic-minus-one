@@ -38,7 +38,7 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 ## AUTHENTICATION
 gem 'omniauth', '~> 1.6', '>= 1.6.1'
 gem 'omniauth-facebook'
-gem 'omniauth-google'
+gem "omniauth-google-oauth2"
 
 ## IMAGE UPLOADING & PROCESSING
 gem 'shrine', '~> 2.6', '>= 2.6.1'

@@ -9,6 +9,11 @@ Rails.application.routes.draw do
     resources :items
   end
 
+
+  get '/items' => 'items#index'
+  get '/items/new' => 'items#new'
+
+
   get    '/auth/:provider'          => 'omniauth#auth', as: :auth
   get    '/auth/:provider/callback' => 'session#create'
   get    '/auth/failure'            => 'session#failure'
