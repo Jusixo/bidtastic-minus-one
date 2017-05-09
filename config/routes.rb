@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   get 'pages/landing'
 
   root 'pages#landing'
-
-  resources :auctions do
-    resources :items
+  resources :user do
+    resources :auctions do
+      resources :items
+    end
   end
 
   get    '/auth/:provider'          => 'omniauth#auth', as: :auth
