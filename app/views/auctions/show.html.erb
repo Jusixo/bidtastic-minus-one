@@ -18,7 +18,7 @@
   <dd><%= @auction.organization %></dd>
 
   <dt>Image data:</dt>
-  <dd><%= @auction.image_data %></dd>
+  <dd><%= image_tag(@auction.image_url(:small)) %></dd>
 
   <dt>Date:</dt>
   <dd><%= @auction.date %></dd>
