@@ -1,3 +1,7 @@
+body {
+  background-color: #ddd;
+}
+
 .bidtastic-navbar-brand {
   padding: 8px 0;
 }
@@ -7,4 +11,14 @@
   margin-top: 8px;
   text-decoration: none;
   font-size: 20px;
+}
+
+
+.col-auction {
+  margin-top: 40px;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  background-color: black;
+  border: solid;
+  border-color: inherit;
 }
