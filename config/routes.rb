@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'session/new'
+
   get 'pages/landing'
 
   root 'pages#landing'

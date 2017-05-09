@@ -22,7 +22,7 @@
 <body class="controller-<%= controller_name%> action-<%= action_name%>">
 
     <div class="row col-xs-10 col-xs-offset-1">
-      <%= link_to(auctions_path, class:"btn btn-block btn-social btn-lg btn-facebook") do %>
+      <%= link_to(auth_path(provider: 'facebook'), class:"btn btn-block btn-social btn-lg btn-facebook") do %>
       <span class="fa fa-facebook"></span> Sign in with Facebook
       <% end %>
     </div>
