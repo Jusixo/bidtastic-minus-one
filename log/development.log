@@ -375,3 +375,1186 @@ Processing by PagesController#landing as HTML
 Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:28:40 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.0) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.0) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.0) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.0) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5915521955532851865);[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20170509143726)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "provider" character varying, "email" character varying, "uid" character varying, "access_token" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5915521955532851865)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (189.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "bidtastic_development"[0m
+  [1m[35m (176.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "bidtastic_test"[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5915521955532851865);[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAuctions (20170508222534)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "auctions" ("id" bigserial primary key, "name_of_event" character varying, "organization" character varying, "image_data" text, "date" character varying, "start_time" character varying, "duration" character varying, "description" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170508222534"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20170509143726)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "provider" character varying, "email" character varying, "uid" character varying, "access_token" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170509143726"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-05-09 15:31:24.466331"], ["updated_at", "2017-05-09 15:31:24.466331"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5915521955532851865)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:31:31 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (0.7ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:32:51 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (253.2ms)
+Completed 200 OK in 256ms (Views: 254.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:39:23 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (42.6ms)
+Completed 200 OK in 45ms (Views: 43.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/config.xml" for 127.0.0.1 at 2017-05-09 11:39:24 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/config.xml"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/ripple/user-agent" for 127.0.0.1 at 2017-05-09 11:39:24 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/ripple/user-agent"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:39:24 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (40.2ms)
+Completed 200 OK in 43ms (Views: 41.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:39:27 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (38.8ms)
+Completed 200 OK in 42ms (Views: 40.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/ripple/user-agent" for 127.0.0.1 at 2017-05-09 11:39:27 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/ripple/user-agent"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:39:27 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (42.7ms)
+Completed 200 OK in 45ms (Views: 44.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:39:46 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (42.8ms)
+Completed 200 OK in 46ms (Views: 44.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/ripple/user-agent" for 127.0.0.1 at 2017-05-09 11:39:46 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/ripple/user-agent"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:39:47 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (41.5ms)
+Completed 200 OK in 44ms (Views: 43.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:41:26 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (48.3ms)
+Completed 200 OK in 51ms (Views: 49.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:41:54 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (40.7ms)
+Completed 200 OK in 44ms (Views: 42.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/ripple/user-agent" for 127.0.0.1 at 2017-05-09 11:41:55 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/ripple/user-agent"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:41:55 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (46.3ms)
+Completed 200 OK in 49ms (Views: 47.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:42:17 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (40.7ms)
+Completed 200 OK in 43ms (Views: 42.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/ripple/user-agent" for 127.0.0.1 at 2017-05-09 11:42:18 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/ripple/user-agent"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:42:18 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (54.9ms)
+Completed 200 OK in 58ms (Views: 56.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:42:42 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (40.8ms)
+Completed 200 OK in 43ms (Views: 42.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/ripple/user-agent" for 127.0.0.1 at 2017-05-09 11:42:43 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/ripple/user-agent"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:42:43 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (51.5ms)
+Completed 200 OK in 54ms (Views: 52.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/landing" for 127.0.0.1 at 2017-05-09 11:42:48 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (40.5ms)
+Completed 200 OK in 43ms (Views: 41.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/landing" for 127.0.0.1 at 2017-05-09 11:42:49 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (42.1ms)
+Completed 200 OK in 45ms (Views: 43.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/landing" for 127.0.0.1 at 2017-05-09 11:42:50 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (48.8ms)
+Completed 200 OK in 51ms (Views: 50.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/landing" for 127.0.0.1 at 2017-05-09 11:43:16 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (41.8ms)
+Completed 200 OK in 44ms (Views: 43.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pages/landing" for 127.0.0.1 at 2017-05-09 11:43:18 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (40.2ms)
+Completed 200 OK in 43ms (Views: 41.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/autctions" for 127.0.0.1 at 2017-05-09 11:43:23 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/autctions"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/ripple/user-agent" for 127.0.0.1 at 2017-05-09 11:43:23 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/ripple/user-agent"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/autctions" for 127.0.0.1 at 2017-05-09 11:43:24 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/autctions"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/auctions" for 127.0.0.1 at 2017-05-09 11:43:34 -0400
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  Rendered auctions/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 50ms (Views: 45.4ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/ripple/user-agent" for 127.0.0.1 at 2017-05-09 11:43:35 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/ripple/user-agent"):
+  
+actionpack (5.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.0) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.2) lib/rack/method_override.rb:22:in `call'
+rack (2.0.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.0) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.2) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.0) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/auctions" for 127.0.0.1 at 2017-05-09 11:43:35 -0400
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.2ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  Rendered auctions/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 59ms (Views: 57.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2017-05-09 11:43:45 -0400
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  Rendered auctions/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 46ms (Views: 43.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:44:25 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (44.0ms)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"auctions"}, missing required keys: [:id]):
+    31: 
+    32: 
+    33:   <a class="btn btn-block btn-social btn-facebook">
+    34:    <%= link_to auction_path %><span class="fa fa-facebook"></span> Sign in with Facebook
+    35:   </a>
+    36: 
+    37:    <a class="btn btn-block btn-social btn-google">
+  
+app/views/pages/landing.html.erb:34:in `_app_views_pages_landing_html_erb__2452774081809030118_70195333573860'
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:46:18 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (41.5ms)
+Completed 200 OK in 44ms (Views: 43.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2017-05-09 11:46:20 -0400
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.2ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  Rendered auctions/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 50ms (Views: 47.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:47:29 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (48.3ms)
+Completed 200 OK in 51ms (Views: 49.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:47:57 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (0.8ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:33: syntax error, unexpected '='
+CTIONS", auctions_path, class="btn btn-block btn-social btn-
+                              ^):
+  
+app/views/pages/landing.html.erb:33: syntax error, unexpected '='
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:48:11 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (1.1ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:33: syntax error, unexpected ')', expecting &. or :: or '[' or '.'
+ock btn-social btn-facebook" );@output_buffer.safe_append=',
+                              ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:52: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:54: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/pages/landing.html.erb:33: syntax error, unexpected ')', expecting &. or :: or '[' or '.'
+app/views/pages/landing.html.erb:52: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/pages/landing.html.erb:54: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:48:18 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (45.5ms)
+Completed 200 OK in 49ms (Views: 47.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:48:44 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (40.1ms)
+Completed 200 OK in 43ms (Views: 41.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:49:12 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (1.1ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:33: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+cial btn-facebook" <span class="fa fa-facebook"></span> );@o
+                              ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:33: syntax error, unexpected '<'
+<span class="fa fa-facebook"></span> );@output_buffer.safe_a
+                              ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:36: unknown regexp options - pa
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:36: unmatched close parenthesis: /span> );@output_buffer.safe_append='
+
+  <a class="btn btn-block btn-social btn-facebook">
+   '.freeze;@output_buffer.append=( link_to auctions_path );@output_buffer.safe_append='<span class="fa fa-facebook"></
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:36: syntax error, unexpected keyword_in, expecting ')'
+a fa-facebook"></span> Sign in with Facebook
+                              ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:37: syntax error, unexpected '<', expecting ')'
+  </a>
+   ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:40: unknown regexp options - pa
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:40: syntax error, unexpected keyword_in, expecting ')'
+"fa fa-google"></span> Sign in with Google
+                              ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:41: syntax error, unexpected '<', expecting ')'
+  </a>
+   ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:42: unknown regexp options - dv
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:43: syntax error, unexpected '<'
+</body>
+ ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:44: unknown regexp options - htl
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:47: syntax error, unexpected '<'
+<!-- = link_to auth_path(provid
+ ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:47: syntax error, unexpected '='
+<!-- = link_to auth_path(provider: \
+      ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:47: syntax error, unexpected $undefined
+ link_to auth_path(provider: \'github\'), class: "btn btn-wa
+                              ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:52: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:54: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/pages/landing.html.erb:33: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+app/views/pages/landing.html.erb:33: syntax error, unexpected '<'
+app/views/pages/landing.html.erb:36: unknown regexp options - pa
+app/views/pages/landing.html.erb:36: unmatched close parenthesis: /span> );@output_buffer.safe_append='
+app/views/pages/landing.html.erb:36: syntax error, unexpected keyword_in, expecting ')'
+app/views/pages/landing.html.erb:37: syntax error, unexpected '<', expecting ')'
+app/views/pages/landing.html.erb:40: unknown regexp options - pa
+app/views/pages/landing.html.erb:40: syntax error, unexpected keyword_in, expecting ')'
+app/views/pages/landing.html.erb:41: syntax error, unexpected '<', expecting ')'
+app/views/pages/landing.html.erb:42: unknown regexp options - dv
+app/views/pages/landing.html.erb:43: syntax error, unexpected '<'
+app/views/pages/landing.html.erb:44: unknown regexp options - htl
+app/views/pages/landing.html.erb:47: syntax error, unexpected '<'
+app/views/pages/landing.html.erb:47: syntax error, unexpected '='
+app/views/pages/landing.html.erb:47: syntax error, unexpected $undefined
+app/views/pages/landing.html.erb:52: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/pages/landing.html.erb:54: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:49:19 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (40.1ms)
+Completed 200 OK in 42ms (Views: 41.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:50:06 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (46.3ms)
+Completed 200 OK in 49ms (Views: 47.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:54:27 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (40.2ms)
+Completed 200 OK in 43ms (Views: 41.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:55:00 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (1.1ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:33: syntax error, unexpected '<'
+ btn-social btn-facebook" do <span class="fa fa-facebook"></
+                              ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:33: syntax error, unexpected '<'
+<span class="fa fa-facebook"></span> );@output_buffer.safe_a
+                              ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:37: unknown regexp options - pa
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:37: unmatched close parenthesis: /span> );@output_buffer.safe_append='
+
+
+  <a class="btn btn-block btn-social btn-facebook">
+   <span class="fa fa-facebook"></
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:37: syntax error, unexpected keyword_in, expecting keyword_end
+a fa-facebook"></span> Sign in with Facebook
+                              ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:38: syntax error, unexpected '<', expecting ')'
+  </a>
+   ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:41: unknown regexp options - pa
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:41: syntax error, unexpected keyword_in, expecting ')'
+"fa fa-google"></span> Sign in with Google
+                              ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:42: syntax error, unexpected '<', expecting ')'
+  </a>
+   ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:43: unknown regexp options - dv
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:44: syntax error, unexpected '<'
+</body>
+ ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:45: unknown regexp options - htl
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:48: syntax error, unexpected '<'
+<!-- = link_to auth_path(provid
+ ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:48: syntax error, unexpected '='
+<!-- = link_to auth_path(provider: \
+      ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:48: syntax error, unexpected $undefined
+ link_to auth_path(provider: \'github\'), class: "btn btn-wa
+                              ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:53: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:55: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/pages/landing.html.erb:33: syntax error, unexpected '<'
+app/views/pages/landing.html.erb:33: syntax error, unexpected '<'
+app/views/pages/landing.html.erb:37: unknown regexp options - pa
+app/views/pages/landing.html.erb:37: unmatched close parenthesis: /span> );@output_buffer.safe_append='
+app/views/pages/landing.html.erb:37: syntax error, unexpected keyword_in, expecting keyword_end
+app/views/pages/landing.html.erb:38: syntax error, unexpected '<', expecting ')'
+app/views/pages/landing.html.erb:41: unknown regexp options - pa
+app/views/pages/landing.html.erb:41: syntax error, unexpected keyword_in, expecting ')'
+app/views/pages/landing.html.erb:42: syntax error, unexpected '<', expecting ')'
+app/views/pages/landing.html.erb:43: unknown regexp options - dv
+app/views/pages/landing.html.erb:44: syntax error, unexpected '<'
+app/views/pages/landing.html.erb:45: unknown regexp options - htl
+app/views/pages/landing.html.erb:48: syntax error, unexpected '<'
+app/views/pages/landing.html.erb:48: syntax error, unexpected '='
+app/views/pages/landing.html.erb:48: syntax error, unexpected $undefined
+app/views/pages/landing.html.erb:53: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/pages/landing.html.erb:55: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:55:11 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (1.0ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:53: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+                ^):
+  
+app/views/pages/landing.html.erb:53: syntax error, unexpected keyword_ensure, expecting keyword_end
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:55:22 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (45.6ms)
+Completed 200 OK in 49ms (Views: 47.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:57:17 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (49.1ms)
+Completed 200 OK in 52ms (Views: 50.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:57:24 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (36.6ms)
+Completed 200 OK in 39ms (Views: 37.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 11:58:20 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (0.9ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:33: syntax error, unexpected '<', expecting '}'
+n-facebook", html_options = {<span class="fa fa-facebook"></
+                              ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:33: syntax error, unexpected '<'
+<span class="fa fa-facebook"></span>} );@output_buffer.safe_
+                              ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:34: unknown regexp options - pa
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:34: unmatched close parenthesis: /span>} );@output_buffer.safe_append='
+  <!-- </
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:34: syntax error, unexpected '\n', expecting keyword_do_LAMBDA or tLAMBEG
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:37: syntax error, unexpected '<'
+   <span class="fa fa-facebook"></
+    ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:37: syntax error, unexpected '<'
+<span class="fa fa-facebook"></span> Sign in with Facebook
+                              ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:38: unknown regexp option - a
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:40: syntax error, unexpected '<'
+   <a class="btn btn-block btn-soc
+    ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:41: syntax error, unexpected '<'
+    <span class="fa fa-google"></sp
+     ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:41: syntax error, unexpected '<'
+  <span class="fa fa-google"></span> Sign in with Google
+                              ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:42: unknown regexp option - a
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:43: syntax error, unexpected '<'
+  </div>
+   ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:44: unknown regexp options - bdy
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:45: syntax error, unexpected '<'
+</html>
+ ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:45: unterminated regexp meets end of file):
+  
+app/views/pages/landing.html.erb:33: syntax error, unexpected '<', expecting '}'
+app/views/pages/landing.html.erb:33: syntax error, unexpected '<'
+app/views/pages/landing.html.erb:34: unknown regexp options - pa
+app/views/pages/landing.html.erb:34: unmatched close parenthesis: /span>} );@output_buffer.safe_append='
+app/views/pages/landing.html.erb:34: syntax error, unexpected '\n', expecting keyword_do_LAMBDA or tLAMBEG
+app/views/pages/landing.html.erb:37: syntax error, unexpected '<'
+app/views/pages/landing.html.erb:37: syntax error, unexpected '<'
+app/views/pages/landing.html.erb:38: unknown regexp option - a
+app/views/pages/landing.html.erb:40: syntax error, unexpected '<'
+app/views/pages/landing.html.erb:41: syntax error, unexpected '<'
+app/views/pages/landing.html.erb:41: syntax error, unexpected '<'
+app/views/pages/landing.html.erb:42: unknown regexp option - a
+app/views/pages/landing.html.erb:43: syntax error, unexpected '<'
+app/views/pages/landing.html.erb:44: unknown regexp options - bdy
+app/views/pages/landing.html.erb:45: syntax error, unexpected '<'
+app/views/pages/landing.html.erb:45: unterminated regexp meets end of file
+Started GET "/" for 127.0.0.1 at 2017-05-09 12:00:05 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (50.6ms)
+Completed 200 OK in 53ms (Views: 51.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 12:01:50 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (0.8ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:32: syntax error, unexpected '='
+link_to(auctions_path), class="btn btn-block btn-social btn-
+                              ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:32: syntax error, unexpected keyword_do, expecting keyword_end
+ck btn-social btn-facebook" do @output_buffer.safe_append='
+                              ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:50: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/pages/landing.html.erb:32: syntax error, unexpected '='
+app/views/pages/landing.html.erb:32: syntax error, unexpected keyword_do, expecting keyword_end
+app/views/pages/landing.html.erb:50: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/" for 127.0.0.1 at 2017-05-09 12:01:58 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (0.9ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:32: syntax error, unexpected keyword_class, expecting keyword_end
+  link_to(auctions_path) class="btn btn-block btn-social btn
+                              ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:32: syntax error, unexpected keyword_do, expecting keyword_end
+ck btn-social btn-facebook" do @output_buffer.safe_append='
+                              ^
+/Users/brunoribeiro/tiy/week-9/day-1/bidtastic-minus-one/app/views/pages/landing.html.erb:50: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+                ^):
+  
+app/views/pages/landing.html.erb:32: syntax error, unexpected keyword_class, expecting keyword_end
+app/views/pages/landing.html.erb:32: syntax error, unexpected keyword_do, expecting keyword_end
+app/views/pages/landing.html.erb:50: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/" for 127.0.0.1 at 2017-05-09 12:02:19 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (43.0ms)
+Completed 200 OK in 46ms (Views: 44.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2017-05-09 12:02:21 -0400
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.2ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  Rendered auctions/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 49ms (Views: 48.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2017-05-09 12:02:38 -0400
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  Rendered auctions/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 57ms (Views: 55.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 12:03:02 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (41.3ms)
+Completed 200 OK in 44ms (Views: 42.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 12:03:17 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (50.2ms)
+Completed 200 OK in 53ms (Views: 51.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2017-05-09 12:03:51 -0400
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.2ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  Rendered auctions/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 50ms (Views: 48.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 12:04:02 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (48.0ms)
+Completed 200 OK in 51ms (Views: 49.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 12:04:24 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (41.0ms)
+Completed 200 OK in 44ms (Views: 42.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 12:04:43 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (42.4ms)
+Completed 200 OK in 45ms (Views: 43.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 12:05:16 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (50.3ms)
+Completed 200 OK in 53ms (Views: 51.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 12:06:24 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (39.2ms)
+Completed 200 OK in 42ms (Views: 40.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 12:06:53 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (49.7ms)
+Completed 200 OK in 52ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 12:07:02 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (40.3ms)
+Completed 200 OK in 43ms (Views: 41.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 12:07:27 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (48.3ms)
+Completed 200 OK in 51ms (Views: 49.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2017-05-09 12:07:40 -0400
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.2ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  Rendered auctions/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 49ms (Views: 47.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 12:08:02 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (47.2ms)
+Completed 200 OK in 50ms (Views: 48.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 12:08:15 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (41.5ms)
+Completed 200 OK in 44ms (Views: 42.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 12:08:23 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (41.1ms)
+Completed 200 OK in 44ms (Views: 42.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 12:08:33 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (48.4ms)
+Completed 200 OK in 51ms (Views: 49.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 12:08:45 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (42.1ms)
+Completed 200 OK in 45ms (Views: 43.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2017-05-09 12:08:48 -0400
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  Rendered auctions/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 55ms (Views: 53.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2017-05-09 12:09:15 -0400
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.2ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  Rendered auctions/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 47ms (Views: 45.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 12:09:17 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (46.0ms)
+Completed 200 OK in 49ms (Views: 47.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2017-05-09 12:09:19 -0400
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  Rendered auctions/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 50ms (Views: 48.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 12:09:33 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (46.2ms)
+Completed 200 OK in 49ms (Views: 47.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2017-05-09 12:09:35 -0400
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.3ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  Rendered auctions/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 52ms (Views: 50.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-05-09 12:10:21 -0400
+Processing by PagesController#landing as HTML
+  Rendering pages/landing.html.erb
+  Rendered pages/landing.html.erb (48.1ms)
+Completed 200 OK in 51ms (Views: 49.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auctions" for 127.0.0.1 at 2017-05-09 12:10:26 -0400
+Processing by AuctionsController#index as HTML
+  Rendering auctions/index.html.erb within layouts/application
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions"[0m
+  Rendered auctions/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 76ms (Views: 73.7ms | ActiveRecord: 0.4ms)
+
+
