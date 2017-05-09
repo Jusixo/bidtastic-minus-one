@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   root 'pages#landing'
 
-  resources :auctions
+  resources :auctions do
+    resources :items
+  end
 
   get    '/auth/:provider'          => 'omniauth#auth', as: :auth
   get    '/auth/:provider/callback' => 'session#create'
