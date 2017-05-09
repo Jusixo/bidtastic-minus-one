@@ -25,10 +25,8 @@ ActiveRecord::Schema.define(version: 20170509155751) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "items_id"
     t.bigint "item_id"
     t.index ["item_id"], name: "index_auctions_on_item_id"
-    t.index ["items_id"], name: "index_auctions_on_items_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -46,6 +44,5 @@ ActiveRecord::Schema.define(version: 20170509155751) do
   end
 
   add_foreign_key "auctions", "items"
-  add_foreign_key "auctions", "items", column: "items_id"
   add_foreign_key "items", "auctions"
 end
