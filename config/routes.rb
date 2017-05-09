@@ -4,11 +4,15 @@ Rails.application.routes.draw do
   get 'pages/landing'
 
   root 'pages#landing'
-  resources :user do
-    resources :auctions do
-      resources :items
-    end
+
+  resources :auctions do
+    resources :items
   end
+
+
+  get '/items' => 'items#index'
+  get '/items/new' => 'items#new'
+
 
   get    '/auth/:provider'          => 'omniauth#auth', as: :auth
   get    '/auth/:provider/callback' => 'session#create'
