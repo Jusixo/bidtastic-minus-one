@@ -1,0 +1,23 @@
+body {
+  background: image-url('hero.jpg') no-repeat center center fixed;
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+}
+
+.jumbotron {
+  background-color: rgba(020, 0, 0, 0.4);
+  color: white;
+}
+
+h1 {
+  font-size: 400%;
+}
+
+.landing-buttons {
+  margin-top: 15em;
+}
+
+.landing-button {
+  padding: 0.5em;
+}

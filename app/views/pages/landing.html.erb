@@ -21,17 +21,31 @@
 </head>
 <body class="controller-<%= controller_name%> action-<%= action_name%>">
 
-  <div class="row col-xs-10 col-xs-offset-1">
-    <%= link_to(auth_path(provider: 'facebook'), class:"btn btn-block btn-social btn-lg btn-facebook") do %>
-    <span class="fa fa-facebook"></span> Sign in with Facebook
-    <% end %>
+  <div class="jumbotron">
+    <h1 class="text-center"><span class="fa fa-gavel"></span> Bidtastic</h1>
+
+  </div>
+  <div class="landing-buttons">
+    <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-4 landing-button">
+      <%= link_to auctions_path, class:"btn btn-block btn-social btn-lg btn-facebook" do %>
+      <span class="fa fa-gavel"></span> Proceed to Bidtastic
+      <% end %>
+    </div>
+
+    <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-4 landing-button">
+      <%= link_to(auth_path(provider: 'google_oauth2'), class:"btn btn-block btn-social btn-lg btn-google") do %>
+      <span class="fa fa-google"></span> Sign in with Google
+      <% end %>
+    </div>
+
+    <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-offset-4 landing-button">
+      <%= link_to(auth_path(provider: 'facebook'), class:"btn btn-block btn-social btn-lg btn-facebook") do %>
+      <span class="fa fa-facebook"></span> Sign in with Facebook
+      <% end %>
+    </div>
   </div>
 
-  <div class="row col-xs-10 col-xs-offset-1">
-    <%= link_to(auth_path(provider: 'google_oauth2'), class:"btn btn-block btn-social btn-lg btn-google") do %>
-    <span class="fa fa-google"></span> Sign in with Google
-    <% end %>
-  </div>
+
 
 </body>
 </html>
