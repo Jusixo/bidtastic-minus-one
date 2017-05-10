@@ -1,32 +1,32 @@
 <div class="page-header">
-  <div class="jumbotron">
-    <%= image_tag(@auction.image_url(:medium)) %>
-    <h1><%= @auction.name_of_event %></h1>
-    <p><%= @auction.description %></p>
-  </div>
-
-  <div class="container">
-    <div class="well well-lg">
-      Count Down Timer goes here
-    </div>
-  </div>
-
-  <%= link_to new_item_path, class: 'btn btn-primary' do %>
-    <span class="glyphicon glyphicon-plus"></span>
-    New Items
+  <%= link_to  new_auction_item_path, class: 'btn btn-primary' do %>
+    New Item
   <% end %>
-  <h1 Listing>Items Up for Auctions</h1>
-
-  <div class="media">
-  <div class="media-left media-middle">
-    <a href="#">
-      <img class="media-object" src="..." alt="...">
-    </a>
-  </div>
-  <div class="media-body">
-    <h4 class="media-heading">Middle aligned media</h4>
-    ...
-  </div>
+  <h1 Listing>Items Up for Bid</h1>
 </div>
 
-</div>
+<div class="container-fluid">
+  <%- @items.each do |item| %>
+    <div class="col-xs-12 col-md-4 col-auction">
+      <ul class="media-list">
+          <li class="media">
+            <%= link_to auction_item_path(@auction, item) do %>
+              <% if item.image_url(:medium) %>
+                <div class="media">
+                  <%= image_tag(item.image_url(:large)) %>
+                </div>
+              <% end %>
+            <% end %>
+            <div class="media-body">
+              <h4 class="media-heading"> Name:<%= item.name %></h4>
+              <p>Description: <%= item.description %></p>
+              <p>Starting Price: $ <%= item.starting_bid %></p>
+              <p>Lot Number: <%= item.lot_number %></p>
+              <p>Bid Increment: $<%= item.bid_increment %></p>
+              <p>Category:<%= item.category %></p>
+            </div>
+          </li>
+      </ul>
+    </div>
+  <% end %>
+  </div>
