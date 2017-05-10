@@ -11,7 +11,7 @@ class BidsController < ApplicationController
 
     @bid.save
       if @bid.save
-        redirect_to item_path(@item), notice: "Thank You"
+         redirect_to item_path(@item), notice: "Thank You"
       else
         redirect_to item_path(@item), notice: "Please revise your bid"
       end
@@ -23,5 +23,4 @@ class BidsController < ApplicationController
 
   def Increment_amount
   end
-
 end
