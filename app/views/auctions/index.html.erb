@@ -6,16 +6,17 @@
 </div>
 
 
-
 <div class="container-fluid">
   <%- @auctions.each do |auction| %>
     <div class="col-xs-12 col-md-4 col-auction">
       <ul class="media-list">
           <li class="media">
-            <% if auction.image_url(:medium) %>
-              <div class="media">
-                 <%= image_tag(auction.image_url(:medium), class: 'media-object') %>
-              </div>
+            <%= link_to auction_items_path(auction) do %>
+              <% if auction.image_url(:medium) %>
+                <div class="media">
+                  <%= image_tag(auction.image_url(:large)) %>
+                </div>
+              <% end %>
             <% end %>
             <div class="media-body">
               <h4 class="media-heading"> <%= auction.name_of_event %> <span><p> <%= auction.date %></p></span></h4>
