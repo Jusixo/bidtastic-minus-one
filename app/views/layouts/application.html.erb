@@ -37,21 +37,33 @@
       <div id="navbar" class="nav navbar-nav navbar-right pull-right collapse navbar-collapse">
 
           <li>
-            <%=link_to "welcome", auctions_path, data: { confirm: 'Are you sure?' }, class: "navbar-text btn btn-default " %>
+            <%=link_to "welcome", auctions_path, data: { confirm: 'Are you sure?' }, class: "navbar-text  " %>
           </li>
           <li>
-            <%=link_to "login", auctions_path, data: { confirm: 'Are you sure?' }, class: "navbar-text btn btn-primary btn btn-default" %>
+            <%= link_to(auth_path(provider: 'facebook'), class:"navbar-text") do %> Login <% end %>
           </li>
           <li>
-            <%=link_to "search", auctions_path, data: { confirm: 'Are you sure?' }, class: "navbar-text btn btn-primary btn btn-default" %>
+            <%=link_to "search", auctions_path, data: { confirm: 'Are you sure?' }, class: "navbar-text" %>
           </li>
+
           <li>
-            <%=link_to "logout", auctions_path, data: { confirm: 'Are you sure?' }, class: "navbar-text btn btn-primary btn btn-default" %>
+            <%=link_to "logout", auctions_path, data: { confirm: 'Are you sure?' }, class: "navbar-text" %>
           </li>
 
       </div>
     </div>
   </nav>
+
+
+  <div class="jumbotron jumbotron-app">
+    <div class="container">
+      <h1> Welcome to Bidtastic</h1>
+      <p> a fundraising auction site</p>
+    </div>
+  </div>
+
+
+
   <div class="container">
     <% flash.each do |name, msg| %>
       <%= content_tag :div, class: "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", role: "alert" do %>
