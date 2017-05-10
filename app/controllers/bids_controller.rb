@@ -1,5 +1,5 @@
 class BidsController < ApplicationController
-  def accept
+  def create
     @item = Item.find(params[:item_id])
     unless logged_in?
       redirect_to item_path(@item), notice: "Please log in to make bid"
@@ -21,6 +21,6 @@ class BidsController < ApplicationController
     params.require(:bid).permit(:bid_amount)
   end
 
-  def Increment_amount
+  def increment_amount
   end
 end
