@@ -1,11 +1,3 @@
-<div class="page-header">
-  <%= link_to new_auction_path, class: 'btn btn-primary' do %>
-    New Auction
-  <% end %>
-  <h1 Listing>Upcoming Auctions</h1>
-</div>
-
-
 <div class="container-fluid">
   <%- @auctions.each do |auction| %>
     <div class="col-xs-12 col-md-4 col-auction">
