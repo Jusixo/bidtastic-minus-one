@@ -1,32 +1,33 @@
-<div class="page-header">
-  <%= link_to  new_auction_item_path, class: 'btn btn-primary' do %>
+<div class="container-fluid">
+  <div class="page-header">
+    <%= link_to  new_auction_item_path, class: 'btn btn-primary' do %>
     New Item
-  <% end %>
-  <h1 Listing>Items Up for Bid</h1>
+    <% end %>
+    <h1 Listing>Items Up for Bid</h1>
+  </div>
 </div>
+
+
 
 <div class="container-fluid">
   <%- @items.each do |item| %>
-    <div class="col-xs-12 col-md-4 col-auction">
-      <ul class="media-list">
-          <li class="media">
-            <%= link_to auction_item_path(@auction, item) do %>
-              <% if item.image_url(:medium) %>
-                <div class="media">
-                  <%= image_tag(item.image_url(:large)) %>
-                </div>
-              <% end %>
-            <% end %>
-            <div class="media-body">
-              <h4 class="media-heading"> Name:<%= item.name %></h4>
-              <p>Description: <%= item.description %></p>
-              <p>Starting Price: $ <%= item.starting_bid %></p>
-              <p>Lot Number: <%= item.lot_number %></p>
-              <p>Bid Increment: $<%= item.bid_increment %></p>
-              <p>Category:<%= item.category %></p>
+    <div class="col-xs-12 col-sm-6">
+      <div class="media item-for-bid">
+        <div class="media-left ">
+          <%= link_to auction_item_path(@auction, item) do %>
+            <% if item.image_url(:large) %>
+            <div class="media pull-left">
+              <%= image_tag(item.image_url(:small)) %>
             </div>
-          </li>
-      </ul>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">Lot:<%= item.lot_number %> | <%= item.name %></h4>
+          <p>Starting Price: $ <%= item.starting_bid %></p>
+        </div>
+        <span class="glyphicon glyphicon-heart pull-right" aria-hidden="true"></span>
+      </div>
     </div>
   <% end %>
-  </div>
+</div>
