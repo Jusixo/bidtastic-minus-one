@@ -7,39 +7,46 @@
     <span class="glyphicon glyphicon-pencil"></span>
     Edit
   <% end %>
-  <h1>Show item</h1>
+  <h1><%= @item.name %></h1>
 </div>
 
-<%= image_tag(@item.image_url(:large)) %>
 
-<div class="container">
-  <div class="well well-lg">
-    Count Down Timer goes here
-  </div>
-</div>
+<div class="container-fluid">
 
   <div class="container">
-    Category:
-    <%= @item.category %>
-
-    Name:
-    <%= @item.name %>
-
-    Lot Number:
-    <%= @item.lot_number %>
-
-    Starting Bid:
-    <%= @item.starting_bid %>
-
-    Description:
-    <%= @item.description %>
-
+    <div class="well well-lg">
+      Count Down Timer goes here
+    </div>
   </div>
 
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <div class="thumbnail">
+        <%= image_tag(@item.image_url(:large)) %>
+        <div class="caption">
+          <p>
+            Category:
+            <%= @item.category %>
+          </p>
+          <p>
+            Lot Number:
+            <%= @item.lot_number %>
+          </p>
+          <p>
+            Starting Bid:
+            <%= @item.starting_bid %>
+          </p>
+          <p>
+            Description:
+            <%= @item.description %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 <div class="page-footer">
-  <%= @item.bid_increment %>
   <div class="row">
     <div class="col-lg-6">
       <div class="input-group">

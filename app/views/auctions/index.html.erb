@@ -1,12 +1,12 @@
-<div class="container-fluid">
+<div class="container-fluid container-item">
   <%- @auctions.each do |auction| %>
     <div class="col-xs-12 col-md-4 col-auction">
       <ul class="media-list">
           <li class="media">
             <%= link_to auction_items_path(auction) do %>
-              <% if auction.image_url(:medium) %>
+              <% if auction.image_url(:large) %>
                 <div class="media">
-                  <%= image_tag(auction.image_url(:large)) %>
+                  <%= image_tag(auction.image_url(:medium)) %>
                 </div>
               <% end %>
             <% end %>

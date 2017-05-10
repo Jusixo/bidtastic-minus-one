@@ -30,7 +30,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <%= link_to "#", class: "navbar-brand bidtastic-navbar-brand" do %>
+        <%= link_to "/", class: "navbar-brand bidtastic-navbar-brand" do %>
           <img src="/assets/bidtastic.png" width="160px" alt="">
         <% end %>
       </div>
@@ -56,10 +56,16 @@
 
 
   <div class="jumbotron jumbotron-app">
-    <div class="container">
-      <h1> Welcome to Bidtastic</h1>
-      <p> a fundraising auction site</p>
-    </div>
+    <% if @auction %>
+    <!-- <div class="pull-right">
+      <%= image_tag(@auction.image_url(:small)) %>
+    </div> -->
+        <h1><%= @auction.name_of_event %></h1>
+        <p><%= @auction.description %></p>
+      <% else %>
+        <h1> Welcome to Bidtastic</h1>
+        <p> a fundraising auction site</p>
+      <% end %>
   </div>
 
 

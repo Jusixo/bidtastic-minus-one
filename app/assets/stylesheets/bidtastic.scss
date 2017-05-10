@@ -1,6 +1,5 @@
 body {
-  background: image-url('hero.jpg') no-repeat center center fixed;
-  background-size: cover;
+  background-color: #FFDAB9;
   padding: 0;
   margin: 0;
 }
@@ -28,4 +27,26 @@ body {
   background-color: rgb(47, 46, 47);
   border: solid;
   border-color: inherit;
+  padding-bottom: 2em;
+}
+
+
+
+.container {
+  .media-image{
+    align-items: center;
+  }
+
+  .item-for-bid {
+    padding: 1em;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(47, 46, 47);
+    border: solid;
+    border-color: inherit;
+  }
+
+  .main{
+    align-content: center;
+  }
 }
