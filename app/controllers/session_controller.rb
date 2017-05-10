@@ -10,7 +10,7 @@ class SessionController < ApplicationController
     if current_user
       redirect_to auctions_path
     else
-      redirect_to auth_path(provider: 'facebook')
+      redirect_to auth_path(provider: authentication_data['provider'])
     end
   end
 
@@ -23,7 +23,6 @@ class SessionController < ApplicationController
   # Show the failure page
   def failure
     flash[:notice] = "Login Failure to Bidtastic"
-
     redirect_to root_path
   end
 end
