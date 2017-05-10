@@ -13,7 +13,6 @@ class BidsController < ApplicationController
       if @bid.save
         redirect_to item_path(@item), notice: "Thank You"
       else
-        Rails.logger.debug ["Failed to validate", @bid.errors]
         redirect_to item_path(@item), notice: "Please revise your bid"
       end
   end
@@ -23,6 +22,6 @@ class BidsController < ApplicationController
   end
 
   def Increment_amount
-
   end
+
 end
