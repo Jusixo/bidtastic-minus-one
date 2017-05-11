@@ -15,3 +15,4 @@
 //= require bootstrap
 
 //= require 'cable'
+//= require 'items'
