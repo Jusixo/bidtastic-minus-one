@@ -4,7 +4,6 @@ class UserMailer < ApplicationMailer
 
   def welcome_email(user)
     @user = user
-    @url  = 'http://bidtastic.com'
     mail(to: @user.email, subject: 'Welcome to Bidtastic.')
   end
 end
