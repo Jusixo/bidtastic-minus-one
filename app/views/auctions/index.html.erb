@@ -1,3 +1,17 @@
+
+<%- if logged_in? %>
+  <%- if current_user.admin? %>
+    <div>
+      <%= link_to new_auction_path, class: 'btn btn-primary' do %>
+        <span class="glyphicon glyphicon-plus"></span>
+           New Auction
+      <% end %>
+    </div>
+  <%- end %>
+<%- end %>
+
+
+
 <div class="container-fluid container-item">
   <%- @auctions.each do |auction| %>
     <div class="col-xs-12 col-md-4 col-auction">
@@ -20,4 +34,4 @@
       </ul>
     </div>
   <% end %>
-  </div>
+</div>
