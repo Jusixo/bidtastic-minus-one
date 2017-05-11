@@ -1,12 +1,20 @@
+<%- if logged_in? %>
+  <%- if current_user.admin? %>
+    <%= link_to auction_items_path, class: 'btn btn-default' do %>
+      <span class="glyphicon glyphicon-list-alt"></span>
+      Back
+    <% end %>
+    <%= link_to edit_auction_item_path(@auction, @item), class: 'btn btn-primary' do %>
+      <span class="glyphicon glyphicon-pencil"></span>
+      Edit
+    <%- end %>
+    <%= link_to auction_item_path, method: :delete, data: { confirm: 'Are you sure?' } do %>
+      <span class="btn btn-primary" aria-hidden="true">Delete Item</span>
+    <% end %>
+  <%- end %>
+<%- end %>
+
 <div class="page-header">
-  <%= link_to auction_items_path, class: 'btn btn-default' do %>
-    <span class="glyphicon glyphicon-list-alt"></span>
-    Back
-  <% end %>
-  <%= link_to edit_auction_item_path(@auction, @item), class: 'btn btn-primary' do %>
-    <span class="glyphicon glyphicon-pencil"></span>
-    Edit
-  <% end %>
   <h1><%= @item.name %></h1>
 </div>
 
@@ -68,4 +76,22 @@
       </div><!-- /input-group -->
     </div><!-- /.col-lg-6 -->
   </div><!-- /.row -->
+</div>
+
+
+<div class="media-body">
+  <h4>Item Description:</h4>
+  <p> <%= @item.description %></p>
+  <h4>Item Category:</h4>
+  <p><%= @item.category %></p>
+  <h4>Minimum Bid: <%= number_to_currency(@item.starting_bid, precision: 0) %></h4>
+  <h4>Bidding Increment: <%= number_to_currency(@item.bid_increment, precision: 0) %></h4>
+</div>
+</div>
+<div class="body-show">
+<span> <%= render "bids/form" %></span>
+<h5> Current Bids:</h5>
+<ul class="list-group">
+  <%= render @item.bids.order(bid_amount: :desc) %>
+</ul>
 </div>
