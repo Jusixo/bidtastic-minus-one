@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_admin!
-    unless @current_user.admin == true
+    unless @current_user.admin?
       redirect_to auctions_path
       flash[:notice] = "You're not an Adminstrator."
     end
