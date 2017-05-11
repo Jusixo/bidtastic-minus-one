@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20170511135100) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -19,13 +20,12 @@ ActiveRecord::Schema.define(version: 20170511135100) do
     t.string "name_of_event"
     t.string "organization"
     t.text "image_data"
-    t.string "date"
-    t.string "start_time"
     t.string "duration"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.datetime "start_time"
     t.index ["user_id"], name: "index_auctions_on_user_id"
   end
 
