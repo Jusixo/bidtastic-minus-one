@@ -1,11 +1,16 @@
-var timer;
 
-var compareDate = new Date();
-compareDate.setDate(compareDate.getDate() + 7); //just for this demo today + 7 days
+function setupCountDown()
+{
+  var auctionDateDomElement = $('#timer')
+  if (auctionDateDomElement.length > 0) {
+    var auctionDate = auctionDateDomElement.data('auction-date')
+    var compareDate = new Date(Date.parse(auctionDate))
 
-timer = setInterval(function() {
-  timeBetweenDates(compareDate);
-}, 1000);
+    var timer = setInterval(function() {
+      timeBetweenDates(compareDate);
+    }, 1000);
+  }
+}
 
 function timeBetweenDates(toDate) {
   var dateEntered = toDate;
@@ -13,7 +18,6 @@ function timeBetweenDates(toDate) {
   var difference = dateEntered.getTime() - now.getTime();
 
   if (difference <= 0) {
-
     // Timer done
     clearInterval(timer);
 
@@ -36,6 +40,8 @@ function timeBetweenDates(toDate) {
 }
 
 $(document).ready(function() {
+  setupCountDown();
+
   $('body').on('click', '.favorite-item', function(event) {
     let favorited = $(this).hasClass('favorited')
 
