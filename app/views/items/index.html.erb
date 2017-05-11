@@ -1,11 +1,9 @@
-
-  <div class="page-header">
-    <%= link_to  new_auction_item_path, class: 'btn btn-primary' do %>
-    New Item
-    <% end %>
-
 <%- if logged_in? %>
   <%- if current_user.admin? %>
+    <%= link_to auctions_path, class: 'btn btn-default' do %>
+      <span class="glyphicon glyphicon-list-alt"></span>
+      Back
+    <% end %>
     <%= link_to  new_auction_item_path, class: 'btn btn-primary' do %>
       New Item
     <%- end %>
@@ -17,14 +15,12 @@
     <% end %>
   <%- end %>
 <%- end %>
+
 <div class="container-fluid">
   <div class="page-header">
-    
     <h1 Listing>Items Up for Bid</h1>
   </div>
 </div>
-
-
 
 <div class="container-fluid">
   <%- @items.each do |item| %>
