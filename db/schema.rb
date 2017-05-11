@@ -12,8 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20170510210426) do
 
-
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,6 +29,14 @@ ActiveRecord::Schema.define(version: 20170510210426) do
     t.index ["user_id"], name: "index_auctions_on_user_id"
   end
 
+  create_table "bids", force: :cascade do |t|
+    t.integer "bid_amount"
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "created_by_id"
+    t.index ["item_id"], name: "index_bids_on_item_id"
+  end
 
   create_table "favorites", force: :cascade do |t|
     t.bigint "item_id"
@@ -39,14 +45,6 @@ ActiveRecord::Schema.define(version: 20170510210426) do
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_favorites_on_item_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
-  end
-  create_table "bids", force: :cascade do |t|
-    t.integer "bid_amount"
-    t.bigint "item_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "created_by_id"
-    t.index ["item_id"], name: "index_bids_on_item_id"
   end
 
   create_table "files", force: :cascade do |t|
@@ -80,8 +78,8 @@ ActiveRecord::Schema.define(version: 20170510210426) do
   end
 
   add_foreign_key "auctions", "users"
+  add_foreign_key "bids", "items"
   add_foreign_key "favorites", "items"
   add_foreign_key "favorites", "users"
-  add_foreign_key "bids", "items"
   add_foreign_key "items", "auctions"
 end
