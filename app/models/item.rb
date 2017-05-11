@@ -29,4 +29,8 @@ class Item < ApplicationRecord
   def bid_winner
     bids.max_by(&:bid_amount).created_by.name
   end
+
+  def self.categories
+    %W{Memorabilia Events Food Jewelry Clothing Other}
+  end
 end
