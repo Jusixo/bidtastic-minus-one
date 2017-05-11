@@ -65,6 +65,25 @@ class ItemsController < ApplicationController
     redirect_to [@auction, @item]
   end
 
+  def favorite
+    @auction = Auction.find(params[:auction_id])
+    @item = @auction.items.find(params[:id])
+
+    Favorite.create(item: @item, user: current_user)
+
+    Rails.logger.info "FAVORITING ITEM #{@item.name}"
+  end
+
+  def unfavorite
+    @auction = Auction.find(params[:auction_id])
+    @item = @auction.items.find(params[:id])
+
+    favorite = Favorite.find_by(item: @item, user: current_user)
+    favorite.destroy
+
+    Rails.logger.info "UNFAVORITING ITEM #{@item.name}"
+  end
+
   private
 
   # Only allow a trusted parameter "white list" through.
