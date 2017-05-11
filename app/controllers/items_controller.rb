@@ -1,4 +1,7 @@
 class ItemsController < ApplicationController
+  before_action :authenticate!, except: [:index]
+  before_action :authenticate_admin!, only: [:new, :create, :update, :destroy]
+
   # GET /Items
   def index
     @auction = Auction.find(params[:auction_id])
