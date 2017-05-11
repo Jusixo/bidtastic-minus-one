@@ -35,7 +35,7 @@ class ItemsController < ApplicationController
     @item = @auction.items.new(item_params)
 
     if @item.save
-      redirect_to [@auction, @item], notice: 'Item was successfully created.'
+      redirect_to [@auction, @item]
     else
       render :new
     end
@@ -48,7 +48,7 @@ class ItemsController < ApplicationController
     @item = @auction.items.find(params[:id])
 
     if @item.update(item_params)
-      redirect_to [@auction, @item], notice: 'Item was successfully updated.'
+      redirect_to [@auction, @item], notice: 'New Bid in'
     else
       render :edit
     end
@@ -62,7 +62,7 @@ class ItemsController < ApplicationController
 
     @item.destroy
 
-    redirect_to [@auction, @item], notice: 'Item was successfully destroyed.'
+    redirect_to [@auction, @item]
   end
 
   def favorite

@@ -58,40 +58,16 @@
   </div>
 
 <div class="page-footer">
-  <div class="row">
-    <div class="col-lg-6">
-      <div class="input-group">
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="button">BID</button>
-        </span>
-        <input type="text" class="form-control" placeholder="<%= @item.bid_increment %>">
-      </div><!-- /input-group -->
-    </div><!-- /.col-lg-6 -->
-    <div class="col-lg-6">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="<%= @item.bid_increment %>">
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="button">BID</button>
-        </span>
-      </div><!-- /input-group -->
-    </div><!-- /.col-lg-6 -->
-  </div><!-- /.row -->
-</div>
-
-
-<div class="media-body">
-  <h4>Item Description:</h4>
-  <p> <%= @item.description %></p>
-  <h4>Item Category:</h4>
-  <p><%= @item.category %></p>
-  <h4>Minimum Bid: <%= number_to_currency(@item.starting_bid, precision: 0) %></h4>
-  <h4>Bidding Increment: <%= number_to_currency(@item.bid_increment, precision: 0) %></h4>
-</div>
-</div>
-<div class="body-show">
-<span> <%= render "bids/form" %></span>
-<h5> Current Bids:</h5>
-<ul class="list-group">
-  <%= render @item.bids.order(bid_amount: :desc) %>
-</ul>
+  <div class="media-body">
+    <h4>Starting Bid: <%= number_to_currency(@item.starting_bid, precision: 0) %></h4>
+    <h4>Minimum Bid: <%= number_to_currency(@item.bid_increment, precision: 0) %></h4>
+  </div>
+  </div>
+  <div class="body-show">
+  <span> <%= render "bids/form" %></span>
+  <h5> Bid activity</h5>
+  <ul>
+    <%= render @item.bids.order(bid_amount: :desc) %>
+  </ul>
+  </div>
 </div>
