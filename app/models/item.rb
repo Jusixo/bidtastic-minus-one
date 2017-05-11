@@ -4,6 +4,9 @@ class Item < ApplicationRecord
 
   has_many :bids
 
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :category, presence: true
   validates :starting_bid, presence: true
   validates :bid_increment, presence: true
 
@@ -15,11 +18,15 @@ class Item < ApplicationRecord
     bids_in_order = self.bids.order(:bid_amount)
 
     if bids_in_order.none?
-      self.minimum_bid
+      self.starting_bid
     else
       highest_bid = bids_in_order.last
 
       highest_bid.bid_amount + self.bid_increment
     end
+  end
+
+  def bid_winner
+    bids.max_by(&:bid_amount).created_by.name
   end
 end

@@ -17,16 +17,13 @@ class BidsController < ApplicationController
 
     @bid.save
     if @bid.save
-       redirect_to auction_item_path(@auction, @item), notice: "Thank You"
+      redirect_to auction_item_path(@auction, @item), notice: "Thank You"
     else
-      redirect_to auction_item_path(@auction, @item), notice: "Please revise your bid"
+      redirect_to auction_item_path(@auction, @item), notice: "Please revise your bid #{@bid.errors.full_messages}"
     end
   end
 
   def bid_params
     params.require(:bid).permit(:bid_amount)
-  end
-
-  def increment_amount
   end
 end
