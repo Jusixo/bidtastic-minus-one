@@ -6,7 +6,12 @@ Rails.application.routes.draw do
   root 'pages#landing'
 
   resources :auctions do
-    resources :items
+    resources :items do
+      member do
+        post 'favorite'
+        post 'unfavorite'
+      end
+    end
   end
 
   get    '/auth/:provider'          => 'omniauth#auth', as: :auth

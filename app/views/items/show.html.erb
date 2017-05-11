@@ -10,41 +10,44 @@
   <h1><%= @item.name %></h1>
 </div>
 
-
 <div class="container-fluid">
-
-  <div class="container">
-    <div class="well well-lg">
-      Count Down Timer goes here
-    </div>
-  </div>
 
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
       <div class="thumbnail">
         <%= image_tag(@item.image_url(:large)) %>
         <div class="caption">
-          <p>
+          <h3>
             Category:
             <%= @item.category %>
-          </p>
-          <p>
+          </h3>
+          <h3>
             Lot Number:
             <%= @item.lot_number %>
-          </p>
-          <p>
+          </h3>
+          <h3>
             Starting Bid:
             <%= @item.starting_bid %>
-          </p>
-          <p>
+          </h3>
+          <h3>
             Description:
             <%= @item.description %>
-          </p>
+          </h3>
         </div>
       </div>
     </div>
   </div>
 
+  <div class="container">
+    <div class="well well-lg">
+      <div id="timer">
+        <span id="days"></span>days
+        <span id="hours"></span>hours
+        <span id="minutes"></span>minutes
+        <span id="seconds"></span>seconds
+      </div>
+    </div>
+  </div>
 
 <div class="page-footer">
   <div class="row">

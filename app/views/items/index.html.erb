@@ -26,7 +26,9 @@
           <h4 class="media-heading">Lot:<%= item.lot_number %> | <%= item.name %></h4>
           <p>Starting Price: $ <%= item.starting_bid %></p>
         </div>
-        <span class="glyphicon glyphicon-heart pull-right" aria-hidden="true"></span>
+        <% if logged_in? %>
+          <span data-auction-id="<%= @auction.id %>" data-item-id="<%= item.id %>" class="favorite-item glyphicon glyphicon-heart <%= favorited_class(item, current_user) %>" aria-hidden="true"></span>
+        <% end %>
       </div>
     </div>
   <% end %>
