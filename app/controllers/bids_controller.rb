@@ -1,8 +1,14 @@
 class BidsController < ApplicationController
   def create
+
+    @auction = Auction.find(params[:auction_id])
+
+    @item = @auction.items.find(params[:item_id])
+
     @item = Item.find(params[:item_id])
+
     unless logged_in?
-      redirect_to item_path(@item), notice: "Please log in to make bid"
+      redirect_to auction_item_path(@auction, @item), notice: "Please log in to make bid"
       return
     end
 
@@ -10,11 +16,11 @@ class BidsController < ApplicationController
     @bid.created_by = current_user
 
     @bid.save
-      if @bid.save
-         redirect_to item_path(@item), notice: "Thank You"
-      else
-        redirect_to item_path(@item), notice: "Please revise your bid"
-      end
+    if @bid.save
+       redirect_to auction_item_path(@auction, @item), notice: "Thank You"
+    else
+      redirect_to auction_item_path(@auction, @item), notice: "Please revise your bid"
+    end
   end
 
   def bid_params
