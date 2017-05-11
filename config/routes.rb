@@ -7,6 +7,10 @@ Rails.application.routes.draw do
 
   resources :auctions do
     resources :items do
+      member do
+        post 'favorite'
+        post 'unfavorite'
+      end
       resources :bids
     end
   end
