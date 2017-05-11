@@ -73,10 +73,12 @@
   </div>
   </div>
   <div class="body-show">
-  <span> <%= render "bids/form" %></span>
+
   <h5> Bid activity</h5>
   <ul>
     <%= render @item.bids.order(bid_amount: :desc) %>
   </ul>
   </div>
 </div>
+
+<span class="bid-footer"> <%= render "bids/form" %></span>
