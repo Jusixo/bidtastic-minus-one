@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170510210426) do
-
-
+ActiveRecord::Schema.define(version: 20170511200446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,16 +19,14 @@ ActiveRecord::Schema.define(version: 20170510210426) do
     t.string "name_of_event"
     t.string "organization"
     t.text "image_data"
-    t.string "date"
-    t.string "start_time"
     t.string "duration"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.datetime "start_time"
     t.index ["user_id"], name: "index_auctions_on_user_id"
   end
-
 
   create_table "favorites", force: :cascade do |t|
     t.bigint "item_id"
@@ -40,6 +36,7 @@ ActiveRecord::Schema.define(version: 20170510210426) do
     t.index ["item_id"], name: "index_favorites_on_item_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
+
   create_table "bids", force: :cascade do |t|
     t.integer "bid_amount"
     t.bigint "item_id"
