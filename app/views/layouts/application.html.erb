@@ -30,8 +30,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-
-        <img src="/assets/bidtastic.png" width="160px" alt="">
+        <%= link_to auctions_path do %><img src="/assets/bidtastic.png" width="160px" alt="Bidtastic Logo"><% end %>
       </div>
       <div id="navbar" class="nav navbar-nav navbar-right pull-right collapse navbar-collapse">
         <%- if logged_in? %>

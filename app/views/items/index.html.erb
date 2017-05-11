@@ -1,18 +1,30 @@
 <%- if logged_in? %>
   <%- if current_user.admin? %>
-    <%= link_to auctions_path, class: 'btn btn-default' do %>
-      <span class="glyphicon glyphicon-list-alt"></span>
-      Back
-    <% end %>
-    <%= link_to  new_auction_item_path, class: 'btn btn-primary' do %>
-      New Item
-    <%- end %>
-    <%= link_to edit_auction_path(@auction), class: 'btn btn-primary' do %>
-      Edit Auction
-    <% end %>
-    <%= link_to @auction, method: :delete, data: { confirm: 'Are you sure?' } do %>
-      <span class="btn btn-primary" aria-hidden="true">Delete Auction</span>
-    <% end %>
+    <div class="row button-admin">
+      <div class="col-xs-6">
+        <%= link_to auctions_path, class: 'btn btn-default' do %>
+          <span class="glyphicon glyphicon-list-alt"></span>
+          Back
+        <% end %>
+      </div>
+      <div class="col-xs-6">
+        <%= link_to  new_auction_item_path, class: 'btn btn-primary' do %>
+          New Item
+        <%- end %>
+      </div>
+    </div>
+    <div class="row button-admin">
+      <div class="col-xs-6">
+        <%= link_to edit_auction_path(@auction), class: 'btn btn-primary' do %>
+          Edit Auction
+        <% end %>
+      </div>
+      <div class="col-xs-6">
+        <%= link_to @auction, method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <span class="btn btn-primary" aria-hidden="true">Delete Auction</span>
+        <% end %>
+      </div>
+    </div>
   <%- end %>
 <%- end %>
 

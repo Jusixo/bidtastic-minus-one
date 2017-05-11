@@ -44,7 +44,16 @@
         </div>
       </div>
     </div>
+
+  <div class="well well-md">
+    <div id="timer" data-auction-date="<%= @auction.start_time.in_time_zone("EST") %>">
+      <span id="hours"></span>hours
+      <span id="minutes"></span>minutes
+      <span id="seconds"></span>seconds
+    </div>
   </div>
+</div>
+
 
   <div class="container">
     <div class="well well-lg">
@@ -64,10 +73,12 @@
   </div>
   </div>
   <div class="body-show">
-  <span> <%= render "bids/form" %></span>
+
   <h5> Bid activity</h5>
   <ul>
     <%= render @item.bids.order(bid_amount: :desc) %>
   </ul>
   </div>
 </div>
+
+<span class="bid-footer"> <%= render "bids/form" %></span>
