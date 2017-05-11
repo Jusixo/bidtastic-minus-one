@@ -31,12 +31,7 @@
           <span class="icon-bar"></span>
         </button>
 
-        <%= link_to "/", class: "navbar-brand bidtastic-navbar-brand" do %>
-
-        <%= link_to auctions_path, class: "navbar-brand bidtastic-navbar-brand" do %>
-
-          <img src="/assets/bidtastic.png" width="160px" alt="">
-        <% end %>
+        <img src="/assets/bidtastic.png" width="160px" alt="">
       </div>
       <div id="navbar" class="nav navbar-nav navbar-right pull-right collapse navbar-collapse">
         <%- if logged_in? %>
@@ -63,11 +58,6 @@
 
   <div class="jumbotron jumbotron-app">
     <% if @auction %>
-
-    <!-- <div class="pull-right">
-      <%= image_tag(@auction.image_url(:small)) %>
-    </div> -->
-
         <h1><%= @auction.name_of_event %></h1>
         <p><%= @auction.description %></p>
       <% else %>

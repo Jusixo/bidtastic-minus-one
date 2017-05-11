@@ -1,16 +1,13 @@
-
 <%- if logged_in? %>
   <%- if current_user.admin? %>
     <div>
       <%= link_to new_auction_path, class: 'btn btn-primary' do %>
         <span class="glyphicon glyphicon-plus"></span>
            New Auction
-      <% end %>
+      <%- end %>
     </div>
   <%- end %>
 <%- end %>
-
-
 
 <div class="container-fluid container-item">
   <%- @auctions.each do |auction| %>
@@ -18,12 +15,12 @@
       <ul class="media-list">
           <li class="media">
             <%= link_to auction_items_path(auction) do %>
-              <% if auction.image_url(:large) %>
+              <%- if auction.image_url(:large) %>
                 <div class="media">
                   <%= image_tag(auction.image_url(:medium)) %>
                 </div>
-              <% end %>
-            <% end %>
+              <%- end %>
+            <%- end %>
             <div class="media-body">
               <h4 class="media-heading"> <%= auction.name_of_event %> <span><p> <%= auction.date %></p></span></h4>
                 <p><%= auction.start_time %></p>
@@ -33,5 +30,5 @@
           </li>
       </ul>
     </div>
-  <% end %>
+  <%- end %>
 </div>
