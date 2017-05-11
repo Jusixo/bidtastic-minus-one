@@ -1,4 +1,7 @@
 class AuctionsController < ApplicationController
+  before_action :authenticate!, except: [:index]
+  before_action :authenticate_admin!, only: [:new, :create, :update, :destroy]
+
   # GET /auctions
   def index
     @auctions = Auction.all

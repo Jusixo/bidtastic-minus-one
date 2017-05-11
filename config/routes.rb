@@ -6,7 +6,13 @@ Rails.application.routes.draw do
   root 'pages#landing'
 
   resources :auctions do
-    resources :items
+    resources :items do
+      member do
+        post 'favorite'
+        post 'unfavorite'
+      end
+      resources :bids
+    end
   end
 
   get    '/auth/:provider'          => 'omniauth#auth', as: :auth
@@ -20,4 +26,5 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   mount Shrine::DownloadEndpoint => "/attachments"
+
 end

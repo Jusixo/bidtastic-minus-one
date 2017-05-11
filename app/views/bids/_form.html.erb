@@ -1,0 +1,5 @@
+<%= form_for([@item.auction, @item, @item.bids.build]) do |f| %>
+    <%= f.label :bid_amount %>
+    <%= f.number_field :bid_amount, value: "#{@item.next_minimum_bid}"%>
+    <%= f.submit "Place Bid"%>
+<% end %>

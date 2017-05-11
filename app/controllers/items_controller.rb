@@ -1,4 +1,7 @@
 class ItemsController < ApplicationController
+  before_action :authenticate!, except: [:index]
+  before_action :authenticate_admin!, only: [:new, :create, :update, :destroy]
+
   # GET /Items
   def index
     @auction = Auction.find(params[:auction_id])
@@ -32,7 +35,7 @@ class ItemsController < ApplicationController
     @item = @auction.items.new(item_params)
 
     if @item.save
-      redirect_to [@auction, @item], notice: 'Item was successfully created.'
+      redirect_to [@auction, @item]
     else
       render :new
     end
@@ -45,7 +48,7 @@ class ItemsController < ApplicationController
     @item = @auction.items.find(params[:id])
 
     if @item.update(item_params)
-      redirect_to [@auction, @item], notice: 'Item was successfully updated.'
+      redirect_to [@auction, @item], notice: 'New Bid in'
     else
       render :edit
     end
@@ -59,7 +62,26 @@ class ItemsController < ApplicationController
 
     @item.destroy
 
-    redirect_to [@auction, @item], notice: 'Item was successfully destroyed.'
+    redirect_to [@auction, @item]
+  end
+
+  def favorite
+    @auction = Auction.find(params[:auction_id])
+    @item = @auction.items.find(params[:id])
+
+    Favorite.create(item: @item, user: current_user)
+
+    Rails.logger.info "FAVORITING ITEM #{@item.name}"
+  end
+
+  def unfavorite
+    @auction = Auction.find(params[:auction_id])
+    @item = @auction.items.find(params[:id])
+
+    favorite = Favorite.find_by(item: @item, user: current_user)
+    favorite.destroy
+
+    Rails.logger.info "UNFAVORITING ITEM #{@item.name}"
   end
 
   private

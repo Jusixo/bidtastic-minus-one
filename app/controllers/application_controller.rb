@@ -19,7 +19,15 @@ class ApplicationController < ActionController::Base
   # Method to use in filter to ensure the user is logged in
   def authenticate!
     unless logged_in?
-      redirect_to auth_path(provider: 'facebook')
+      redirect_to root_path
+      flash[:notice] = "Please login to Bidtastic"
+    end
+  end
+
+  def authenticate_admin!
+    unless @current_user.admin?
+      redirect_to auctions_path
+      flash[:notice] = "You're not an Adminstrator."
     end
   end
 end

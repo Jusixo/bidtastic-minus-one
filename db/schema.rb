@@ -37,6 +37,15 @@ ActiveRecord::Schema.define(version: 20170511200446) do
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
+  create_table "bids", force: :cascade do |t|
+    t.integer "bid_amount"
+    t.bigint "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "created_by_id"
+    t.index ["item_id"], name: "index_bids_on_item_id"
+  end
+
   create_table "files", force: :cascade do |t|
     t.binary "content"
     t.text "metadata"
@@ -64,10 +73,12 @@ ActiveRecord::Schema.define(version: 20170511200446) do
     t.string "access_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin", default: false
   end
 
   add_foreign_key "auctions", "users"
   add_foreign_key "favorites", "items"
   add_foreign_key "favorites", "users"
+  add_foreign_key "bids", "items"
   add_foreign_key "items", "auctions"
 end
