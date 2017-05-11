@@ -1,8 +1,11 @@
 class BidsController < ApplicationController
   def create
+
     @auction = Auction.find(params[:auction_id])
 
     @item = @auction.items.find(params[:item_id])
+
+    @item = Item.find(params[:item_id])
 
     unless logged_in?
       redirect_to auction_item_path(@auction, @item), notice: "Please log in to make bid"

@@ -4,7 +4,7 @@ class Item < ApplicationRecord
 
   has_many :bids
 
-  validates :minimum_bid, presence: true
+  validates :starting_bid, presence: true
   validates :bid_increment, presence: true
 
   def largest_bid_amount
