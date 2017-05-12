@@ -1,5 +1,3 @@
-
-
 function setupCountDown()
 {
   var auctionDateDomElement = $('#timer')

@@ -32,7 +32,7 @@ body {
 
 
 
-.container {
+.container-fluid {
   .media-image{
     align-items: center;
   }
@@ -54,6 +54,7 @@ body {
 
   .well{
     body {
+      padding-top: 2em;
       background: #f5f5f5;
     }
 
