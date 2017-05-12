@@ -21,7 +21,7 @@ function timeBetweenDates(toDate) {
     // Timer done
     clearInterval(timer);
     $("#timer").text('Auction is over!')
-    
+
   } else {
     var seconds = Math.floor(difference / 1000);
     var minutes = Math.floor(seconds / 60);
