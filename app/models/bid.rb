@@ -8,7 +8,7 @@ class Bid < ApplicationRecord
 
   def exceeds_minimum
     if bid_amount.to_i < item.next_minimum_bid
-      errors.add(:bid_amount, "Minumum bid is #{item.next_minimum_bid}")
+      errors.add(:bid_amount, "Minimum is:#{item.next_minimum_bid}")
     end
   end
 end
