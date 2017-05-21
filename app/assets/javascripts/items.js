@@ -1,9 +1,8 @@
-
-
 function setupCountDown()
 {
   var auctionDateDomElement = $('#timer')
   if (auctionDateDomElement.length > 0) {
+
     var auctionDate = auctionDateDomElement.data('auction-date')
     var compareDate = new Date(Date.parse(auctionDate))
 
@@ -21,9 +20,9 @@ function timeBetweenDates(toDate) {
   if (difference <= 0) {
     // Timer done
     clearInterval(timer);
+    $("#timer").text('Auction is over!')
 
   } else {
-
     var seconds = Math.floor(difference / 1000);
     var minutes = Math.floor(seconds / 60);
     var hours = Math.floor(minutes / 60);
@@ -41,46 +40,7 @@ function timeBetweenDates(toDate) {
 }
 
 $(document).ready(function() {
-  setupCountDown();
-=======
-$(document).ready(function() {
-
-  var timer;
-
-  var compareDate = new Date();
-  compareDate.setDate(compareDate.getDate() + 7); //just for this demo today + 7 days
-
-  timer = setInterval(function() {
-    timeBetweenDates(compareDate);
-  }, 1000);
-
-  function timeBetweenDates(toDate) {
-    var dateEntered = toDate;
-    var now = new Date();
-    var difference = dateEntered.getTime() - now.getTime();
-
-    if (difference <= 0) {
-
-      // Timer done
-      clearInterval(timer);
-
-    } else {
-
-      var seconds = Math.floor(difference / 1000);
-      var minutes = Math.floor(seconds / 60);
-      var hours = Math.floor(minutes / 60);
-      var days = Math.floor(hours / 24);
-
-      hours %= 24;
-      minutes %= 60;
-      seconds %= 60;
-
-      $("#days").text(days);
-      $("#hours").text(hours);
-      $("#minutes").text(minutes);
-      $("#seconds").text(seconds);
-    }
-  }
+  setupCountDown()
 
   $('body').on('click', '.favorite-item', function(event) {
     let favorited = $(this).hasClass('favorited')

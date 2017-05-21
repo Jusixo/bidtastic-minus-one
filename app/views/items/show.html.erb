@@ -19,7 +19,6 @@
 </div>
 
 <div class="container-fluid">
-
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
       <div class="thumbnail">
@@ -44,21 +43,13 @@
         </div>
       </div>
     </div>
-
-  <div class="well well-md">
-    <div id="timer" data-auction-date="<%= @auction.start_time.in_time_zone("EST") %>">
-      <span id="hours"></span>hours
-      <span id="minutes"></span>minutes
-      <span id="seconds"></span>seconds
-    </div>
   </div>
 </div>
 
 
-  <div class="container">
-    <div class="well well-lg">
-      <div id="timer">
-        <span id="days"></span>days
+  <div class="container-fluid">
+    <div class="well">
+      <div id="timer" data-auction-date="<%= @auction.start_time.in_time_zone("EST") %>">
         <span id="hours"></span>hours
         <span id="minutes"></span>minutes
         <span id="seconds"></span>seconds
